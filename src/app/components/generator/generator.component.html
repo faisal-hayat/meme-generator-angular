@@ -9,17 +9,17 @@
                         
                         <div class="form-group">
                             <label for="">Select Image</label>
-                            <input type="file" class="form-control" accept="image/*">
+                            <input type="file" class="form-control" accept="image/*" (change)="preview($event)">
                         </div>
 
                         <div class="form-group">
                             <label for="topText">Top Text</label>
-                            <input type="text" class="form-control" name="topText">
+                            <input type="text" class="form-control" name="topText" [(ngModel)]="topText" (keyup)="topTextFunc($event)">
                         </div>
 
                         <div class="form-group">
-                            <label for="bottomText">Top Text</label>
-                            <input type="text" class="form-control" name="bottomText">
+                            <label for="bottomText">Bottom Text Text</label>
+                            <input type="text" class="form-control" name="bottomText" [(ngModel)]="bottomText">
                         </div>
 
                         <div class="row">
@@ -45,8 +45,10 @@
             </div>
             <!-- second col -->
             <div class="col-md-6">
-                <canvas class="drop-shadow" style="background-color: #f9f9fd; width: 100%; height: 100%;">  
+                <p style="width: 100%;" class="text-center">{{ topText ? topText : 'Top Text'}}</p>
+                <canvas #memeCanvas class="drop-shadow" style="background-color: #f9f9fd; width: 100%; height: 100%;">  
                 </canvas>
+                <p style="width: 100%;" class="text-center">{{ bottomText ? bottomText: 'Bottom Text' }}</p>
             </div>
         </div>
     </div>
