@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { GeneratorComponent } from './components/generator/generator.component';
+import { ColorSketchModule } from 'ngx-color/sketch';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ import { GeneratorComponent } from './components/generator/generator.component';
     RouterOutlet,
     CommonModule,
     NavbarComponent,
-    GeneratorComponent
+    GeneratorComponent,
+    ColorSketchModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
